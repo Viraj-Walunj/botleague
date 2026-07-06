@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileLayout from "../../../layouts/ProfileLayout";
-import ProfileForm from "../components/ProfileForm";
+import ProfileView from "../components/ProfileView";
 import useProfile from "../hooks/useProfile";
 import CategoryBadge from "../../../shared/components/CategoryBadge";
 import GuardianForm from "../../Eligibility/components/GuardianForm";
@@ -46,30 +46,15 @@ const ProfilePage: React.FC = () => {
           </div>
         )}
 
-        <ProfileForm
+        <ProfileView
           firstName={p.firstName}
-          setFirstName={p.setFirstName}
-
           lastName={p.lastName}
-          setLastName={p.setLastName}
           username={p.username}
           teamName={p.teamName}
-
           dateOfBirth={p.dateOfBirth}
-          setDateOfBirth={p.setDateOfBirth}
-          
           phone={p.phone}
-          setPhone={p.setPhone}
           email={p.email}
-
           address={p.address}
-          setAddress={p.setAddress}
-
-          onSave={p.handleUpdate}
-          isLoading={p.isLoading}
-
-          errors={p.errors}
-          clearError={p.clearError}
         />
 
         {/* Guardian Info — shown for users under 18 */}

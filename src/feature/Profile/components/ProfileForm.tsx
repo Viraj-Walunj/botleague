@@ -74,7 +74,7 @@ export default function ProfileForm({
 
   return (
     <div className=" flex flex-col gap-6">
-      <div className=" grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
+      <div className=" pt-100 grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
         {/* Full Name */}
         <div className=" flex flex-col gap-1.5">
           <label className={labelClass}>Full Name</label>
@@ -158,7 +158,7 @@ export default function ProfileForm({
         <label className={labelClass}>Address</label>
         <textarea
           placeholder="Enter your full address"
-          className={`${inputClass} min-h-[100px] resize-y`}
+          className={`${inputClass} max-w-[980px] h-[128px] rounded-[10px] border border-[#BDBDBD] bg-[#DDDDDD]/42 px-[20px] py-[12px] text-lg text-gray-700 outline-none transition focus:border-blue-400 focus:bg-white disabled:cursor-not-allowed disabled:opacity-70 resize-y`}
           rows={3}
           value={address}
           onChange={(e) => setAddress(e.target.value)}
@@ -174,14 +174,16 @@ export default function ProfileForm({
 
       <div className="flex justify-center sm:justify-end">
         <button
-          onClick={onSave}
-          disabled={isLoading}
-          className={`w-[209px] h-[40px] flex items-center justify-center rounded-lg text-sm font-bold uppercase tracking-wide text-white transition disabled:opacity-60 shadow-lg shadow-purple-500/30 ${
-            saveSuccess ? "bg-green-500" : "bg-gradient-to-b from-[#0162D1] to-[#8C6CFF] hover:brightness-110"
-          }`}
-        >
-          {isLoading ? "Saving..." : saveSuccess ? "✓ Saved!" : "Save Profile Data"}
-        </button>
+  onClick={onSave}
+  disabled={isLoading}
+  className={`h-[55px] w-[220px] flex items-center justify-center rounded-lg text-lg font-semibold uppercase tracking-wide text-white transition disabled:opacity-60 shadow-lg ${
+    saveSuccess 
+      ? "bg-green-500" 
+      : "bg-gradient-to-r from-[#0162D1] to-[#8C6CFF] hover:brightness-110" // Changed to bg-gradient-to-r
+  }`}
+>
+  {isLoading ? "Saving..." : saveSuccess ? "✓ Saved!" : "Save Changes"}
+</button>
       </div>
     </div>
   );

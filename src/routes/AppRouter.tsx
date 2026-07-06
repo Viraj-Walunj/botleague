@@ -17,6 +17,7 @@ import ResetPasswordPage  from "../feature/Auth/pages/ResetPasswordPage";
 // PROFILE / SETTINGS
 // ============================
 import ProfilePage from "../feature/Profile/pages/ProfilePage";
+import EditProfilePage from "../feature/Profile/pages/EditProfilePage";
 import SettingsPage from "../feature/Profile/pages/Setting";
 import VerifyEmail from "../feature/Profile/components/VerifyEmail";
 
@@ -199,6 +200,7 @@ function AppRoutes() {
         <Route path="/my-team" element={<MyTeams />} />
         <Route path="/create-team" element={<CreateTeam />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/edit" element={<EditProfilePage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/robots" element={<RobotsPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
